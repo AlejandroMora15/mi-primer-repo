@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const useContador = (initialState) => {
+export const useContador = (initialState, numToSum, numToDecrease) => {
   const [valor, setValor] = useState(initialState) //Sirve para disparar estados
   /**
    * "modificarEstado" is a function that takes a number as an argument and returns the maximum of the
@@ -8,6 +8,13 @@ export const useContador = (initialState) => {
    */
   const modificarEstado = (num) => {
     setValor(Math.max(valor + num, 0))
+  }
+  const increaseBy = () => {
+    setValor(valor + numToSum)
+  }
+
+  const decreaseBy = () => {
+    setValor(valor - numToDecrease)
   }
   /**
    * The reset function sets the value of the valor variable to 10.
@@ -19,6 +26,8 @@ export const useContador = (initialState) => {
   return {
     valor, 
     modificarEstado,
-    reset
+    reset,
+    decreaseBy,
+    increaseBy
   }
 }

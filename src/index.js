@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { FirstPage } from './pages/FirstPage';
+import { ReactForm } from './pages/ReactForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FirstPage />
+    <ReactForm />
   </React.StrictMode>
 );
